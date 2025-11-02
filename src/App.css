@@ -1,0 +1,32 @@
+.contact{
+  width: 414px;
+  height: 600px;
+  border: 2px solid rgb(238, 238, 238);
+  border-radius: 10px;
+  padding: 24px 24px 42px;
+}
+
+.contact-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.contact-list-item{
+  border: 2px solid rgb(238, 238, 238);
+  border-radius: 10px;
+  padding: 24px 24px 42px;
+}
+
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 20px 10px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(183, 183, 183);
+  border-radius: 12px;
+  padding: 12px;
+}
