@@ -1,5 +1,11 @@
 .contact{
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 414px;
+  max-width: calc(100% - 40px);
   height: 600px;
   border: 2px solid rgb(238, 238, 238);
   border-radius: 10px;

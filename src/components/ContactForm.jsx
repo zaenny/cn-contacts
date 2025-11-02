@@ -1,4 +1,4 @@
-import { Box, Button, Dialog, DialogContent, DialogTitle, TextField } from '@mui/material'
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import usePhonebookStore from '../stores/usePhonebookStore';
 
@@ -18,6 +18,8 @@ const ContactForm = ({open, onClose}) => {
     }
 
     const handleClose = () => {
+        setName('');
+        setPhoneNumber('');
         onClose();
     }
 
@@ -28,9 +30,18 @@ const ContactForm = ({open, onClose}) => {
             <Box display="flex" flexDirection="column" alignItems="center" gap={2} sx={{minWidth:100, pt:2}}>
                 <TextField fullWidth id="name" label="이름" variant="standard" value={name} onChange={(e)=>setName(e.target.value)}/>
                 <TextField fullWidth id="phone-number" label="전화번호" variant="standard" value={phoneNumber} onChange={(e)=> setPhoneNumber(e.target.value)}/>
-                <Button size='large' onClick={handleAddContact}>추가</Button> 
             </Box>
-        </DialogContent>
+        </DialogContent>       
+        <DialogActions sx={{justifyContent:'center'}}>
+            <Box display="flex" gap={2}>
+                <Button size='large' variant="outlined" onClick={handleClose}>
+                    닫기
+                </Button>
+                <Button size='large' variant="outlined" onClick={handleAddContact}>
+                    추가
+                </Button>
+            </Box>
+        </DialogActions>
     </Dialog>
     
   )
