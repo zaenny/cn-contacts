@@ -11,6 +11,9 @@ const ContactForm = ({open, onClose}) => {
     const handleAddContact = () => {
         if(!name.trim() || !phoneNumber.trim()) return;
         addContact(name, phoneNumber);
+
+        setName('');
+        setPhoneNumber('');
         onClose();
     }
 

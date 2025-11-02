@@ -8,7 +8,7 @@ const ContactList = () => {
     const { phoneBook, searchTerm } = usePhonebookStore();
     
     const filterContacts = searchTerm.trim() === '' ? phoneBook : phoneBook.filter((contact) => {
-        const search = searchTerm.toLowerCase.trim();
+        const search = searchTerm.toLowerCase().trim();
         return(
             contact.name.toLowerCase().includes(search) ||
             contact.phoneNumber.includes(search)
@@ -18,14 +18,19 @@ const ContactList = () => {
     return (
         <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             <List>
-            {filterContacts.map((item) => (
+            {filterContacts.length === 0 ? (
+                <ListItem disablePadding>
+                    <ListItemText primary={"검색결과가 없습니다"} />
+                </ListItem>
+            ) : (
+                filterContacts.map((item) => (
                 <ListItem disablePadding>
                     <ListItemIcon>
                         <AccountCircleIcon />
                     </ListItemIcon>
                     <ListItemText primary={item.name} secondary={item.phoneNumber} />
                 </ListItem>
-            ))}
+            )))}
             </List>
         </Box>
     )
